@@ -180,13 +180,13 @@
 
                 <!-- Mobile Timeline -->
                 <div class="md:hidden space-y-8">
-                    <div class="relative pl-8">
-                        <div class="absolute left-0 top-0 w-1 bg-gradient-to-b from-cyan-400 to-purple-400 h-full rounded-full"></div>
+                    <div class="relative pl-2">
+                        <div class="absolute left-0 inset-y-0 w-1 bg-gradient-to-b from-cyan-400 to-purple-400 rounded-full"></div>
                         <div class="space-y-8">
                             <!-- Mobile Item 1 -->
                             <div class="relative">
-                                <div class="absolute -left-2 top-4 w-4 h-4 bg-cyan-400 rounded-full"></div>
-                                <div class="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6">
+                                <div class="absolute left-0 top-4 w-4 h-4 bg-cyan-400 rounded-full"></div>
+                                <div class="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 ml-6">
                                     <div class="text-cyan-400 font-orbitron font-bold text-sm mb-2">2016 – 2020</div>
                                     <h3 class="text-xl font-orbitron font-bold text-white mb-2">Bachelor of Computer Science</h3>
                                     <p class="text-purple-400 font-semibold text-sm mb-3">Northern University of Business and Technology</p>
@@ -196,8 +196,8 @@
 
                             <!-- Mobile Item 2 -->
                             <div class="relative">
-                                <div class="absolute -left-2 top-4 w-4 h-4 bg-purple-400 rounded-full"></div>
-                                <div class="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6">
+                                <div class="absolute left-0 top-4 w-4 h-4 bg-purple-400 rounded-full"></div>
+                                <div class="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 ml-6">
                                     <div class="text-purple-400 font-orbitron font-bold text-sm mb-2">2021</div>
                                     <h3 class="text-xl font-orbitron font-bold text-white mb-2">Laravel Certification</h3>
                                     <p class="text-emerald-400 font-semibold text-sm mb-3">Laravel Academy</p>
@@ -207,8 +207,8 @@
 
                             <!-- Mobile Item 3 -->
                             <div class="relative">
-                                <div class="absolute -left-2 top-4 w-4 h-4 bg-emerald-400 rounded-full"></div>
-                                <div class="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6">
+                                <div class="absolute left-0 top-4 w-4 h-4 bg-emerald-400 rounded-full"></div>
+                                <div class="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 ml-6">
                                     <div class="text-emerald-400 font-orbitron font-bold text-sm mb-2">2022</div>
                                     <h3 class="text-xl font-orbitron font-bold text-white mb-2">AWS Solutions Architect</h3>
                                     <p class="text-cyan-400 font-semibold text-sm mb-3">Amazon Web Services</p>
@@ -218,8 +218,8 @@
 
                             <!-- Mobile Item 4 -->
                             <div class="relative">
-                                <div class="absolute -left-2 top-4 w-4 h-4 bg-yellow-400 rounded-full"></div>
-                                <div class="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6">
+                                <div class="absolute left-0 top-4 w-4 h-4 bg-yellow-400 rounded-full"></div>
+                                <div class="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-6 ml-6">
                                     <div class="text-yellow-400 font-orbitron font-bold text-sm mb-2">2022</div>
                                     <h3 class="text-xl font-orbitron font-bold text-white mb-2">Full Stack JavaScript</h3>
                                     <p class="text-green-400 font-semibold text-sm mb-3">FreeCodeCamp</p>
@@ -320,11 +320,11 @@
             const mobileTimeline = document.querySelector('.md\\:hidden');
             
             if (isDesktop) {
-                desktopTimeline.style.display = 'block';
-                mobileTimeline.style.display = 'none';
+                if (desktopTimeline) desktopTimeline.style.display = 'block';
+                if (mobileTimeline) mobileTimeline.style.display = 'none';
             } else {
-                desktopTimeline.style.display = 'none';
-                mobileTimeline.style.display = 'block';
+                if (desktopTimeline) desktopTimeline.style.display = 'none';
+                if (mobileTimeline) mobileTimeline.style.display = 'block';
             }
         }
 

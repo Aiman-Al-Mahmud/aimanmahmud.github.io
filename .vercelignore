@@ -1,0 +1,16 @@
+.env
+.env.example
+.git
+.gitignore
+.gitattributes
+.editorconfig
+phpunit.xml
+tests/
+storage/app/*
+storage/framework/cache/*
+storage/framework/sessions/*
+storage/framework/testing/*
+storage/framework/views/*
+storage/logs/*
+database/
+node_modules/
