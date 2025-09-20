@@ -94,6 +94,7 @@
     array (
       'rounds' => 12,
       'verify' => true,
+      'limit' => NULL,
     ),
     'argon' => 
     array (
@@ -125,7 +126,7 @@
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
     'cipher' => 'AES-256-CBC',
-    'key' => 'base64:QflVOEqaaY/Gp3nZB+c4INrTYKLYnIHuY3wG+AITcdw=',
+    'key' => 'base64:ROoP7cu9DD8a1fDsaTMxm6lK9IBT5U47/Rk1Eog9Ibo=',
     'previous_keys' => 
     array (
     ),
@@ -167,6 +168,7 @@
       'Arr' => 'Illuminate\\Support\\Arr',
       'Artisan' => 'Illuminate\\Support\\Facades\\Artisan',
       'Auth' => 'Illuminate\\Support\\Facades\\Auth',
+      'Benchmark' => 'Illuminate\\Support\\Benchmark',
       'Blade' => 'Illuminate\\Support\\Facades\\Blade',
       'Broadcast' => 'Illuminate\\Support\\Facades\\Broadcast',
       'Bus' => 'Illuminate\\Support\\Facades\\Bus',
@@ -203,8 +205,8 @@
       'Session' => 'Illuminate\\Support\\Facades\\Session',
       'Storage' => 'Illuminate\\Support\\Facades\\Storage',
       'Str' => 'Illuminate\\Support\\Str',
-      'URL' => 'Illuminate\\Support\\Facades\\URL',
       'Uri' => 'Illuminate\\Support\\Uri',
+      'URL' => 'Illuminate\\Support\\Facades\\URL',
       'Validator' => 'Illuminate\\Support\\Facades\\Validator',
       'View' => 'Illuminate\\Support\\Facades\\View',
       'Vite' => 'Illuminate\\Support\\Facades\\Vite',
@@ -254,6 +256,11 @@
       array (
         'driver' => 'array',
         'serialize' => false,
+      ),
+      'session' => 
+      array (
+        'driver' => 'session',
+        'key' => '_cache',
       ),
       'database' => 
       array (
@@ -720,15 +727,15 @@
     array (
       'token' => NULL,
     ),
+    'resend' => 
+    array (
+      'key' => NULL,
+    ),
     'ses' => 
     array (
       'key' => '',
       'secret' => '',
       'region' => 'us-east-1',
-    ),
-    'resend' => 
-    array (
-      'key' => NULL,
     ),
     'slack' => 
     array (

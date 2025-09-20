@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Laravel Vercel Build Script
+# Laravel Vercel Build Script with Composer Installation
 echo "🚀 Starting Laravel build process..."
 
 # Set environment variables for build
@@ -10,9 +10,23 @@ export APP_DEBUG=false
 export LOG_CHANNEL=stderr
 export LOG_LEVEL=error
 
+# Install Composer if not available
+echo "📦 Checking for Composer..."
+if ! command -v composer &> /dev/null; then
+    echo "📥 Installing Composer..."
+    curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+    if [ $? -ne 0 ]; then
+        echo "❌ Failed to install Composer"
+        exit 1
+    fi
+fi
+
+# Verify Composer installation
+echo "✅ Composer version: $(/usr/local/bin/composer --version 2>/dev/null || composer --version)"
+
 # Install Composer dependencies
 echo "📦 Installing Composer dependencies..."
-composer install --no-dev --optimize-autoloader --prefer-dist --no-interaction
+(/usr/local/bin/composer --version 2>/dev/null || composer --version) && (/usr/local/bin/composer install --no-dev --optimize-autoloader --prefer-dist --no-interaction || composer install --no-dev --optimize-autoloader --prefer-dist --no-interaction)
 
 # Check if composer install was successful
 if [ $? -ne 0 ]; then
@@ -46,8 +60,11 @@ echo "📅 Clearing and caching events..."
 php artisan event:clear -n
 php artisan event:cache -n
 
-# Optimize the application
-echo "⚡ Optimizing application..."
-php artisan optimize -n
+# Create bootstrap/cache directory if it doesn't exist
+echo "📁 Creating bootstrap/cache directory..."
+mkdir -p bootstrap/cache
 
-echo "✅ Build completed successfully!"
+# Set proper permissions for cache directory
+chmod -R 755 bootstrap/cache
+
+echo "✅ Laravel build process completed successfully!"
