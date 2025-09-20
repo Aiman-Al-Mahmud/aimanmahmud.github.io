@@ -12,6 +12,7 @@ This guide explains how to deploy your Laravel application to Vercel with all th
 
 ### New Files:
 - `build.sh` - Build script that handles Composer installation and cache generation
+- `build-alt.sh` - Alternative build script with multiple Composer installation methods
 - `.env.example` - Environment variables template
 - `DEPLOYMENT.md` - This deployment guide
 
@@ -82,7 +83,19 @@ The build script handles:
 ## 🔍 Troubleshooting Common Issues
 
 ### 1. "composer not found" Error
-**Solution**: The `build.sh` script handles Composer installation automatically.
+**Solution**: The `build.sh` script handles Composer installation automatically using the official Composer installer.
+
+**Alternative Solution**: If the first method doesn't work, use `build-alt.sh` which includes multiple installation methods:
+- Package manager installation (apt-get, yum, apk)
+- Manual installation with checksum verification
+
+To use the alternative script, update your `vercel.json`:
+```json
+{
+  "buildCommand": "./build-alt.sh",
+  // ... rest of configuration
+}
+```
 
 ### 2. "bootstrap/cache directory must be present and writable" Error
 **Solution**: The build script generates all necessary cache files during build time, not runtime.

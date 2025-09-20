@@ -11,6 +11,9 @@ if [ ! -f "composer.json" ]; then
     exit 1
 fi
 
+# Composer is installed by the vercel-php runtime
+echo "✅ Composer is available"
+
 # Install Composer dependencies
 echo "📦 Installing Composer dependencies..."
 composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist
