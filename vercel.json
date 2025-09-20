@@ -1,6 +1,4 @@
 {
-  "buildCommand": "./build-alt.sh",
-  "outputDirectory": "public",
   "functions": {
     "api/index.php": {
       "runtime": "vercel-php@0.7.4"
@@ -11,23 +9,5 @@
       "src": "/(.*)",
       "dest": "/api/index.php"
     }
-  ],
-  "env": {
-    "APP_NAME": "Laravel",
-    "APP_ENV": "production",
-    "APP_KEY": "base64:6jbWgfpMll4kKoOXGZY/UQTEPwOCHwJOzk85bx7NdF4=",
-    "APP_DEBUG": "false",
-    "APP_URL": "https://your-app-name.vercel.app",
-    "LOG_CHANNEL": "stderr",
-    "LOG_LEVEL": "error",
-    "DB_CONNECTION": "sqlite",
-    "DB_DATABASE": "/tmp/database.sqlite"
-  },
-  "build": {
-    "env": {
-      "COMPOSER_ALLOW_SUPERUSER": "1",
-      "COMPOSER_NO_INTERACTION": "1",
-      "COMPOSER_MEMORY_LIMIT": "-1"
-    }
-  }
+  ]
 }
