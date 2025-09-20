@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "./build.sh",
   "outputDirectory": "public",
   "functions": {
     "api/index.php": {
@@ -11,5 +11,11 @@
       "src": "/(.*)",
       "dest": "/api/index.php"
     }
-  ]
+  ],
+  "env": {
+    "APP_ENV": "production",
+    "APP_KEY": "base64:6jbWgfpMll4kKoOXGZY/UQTEPwOCHwJOzk85bx7NdF4=",
+    "APP_DEBUG": "false",
+    "LOG_CHANNEL": "stderr"
+  }
 }

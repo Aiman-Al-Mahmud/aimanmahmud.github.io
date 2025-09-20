@@ -60,6 +60,11 @@ return [
             'report' => false,
         ],
 
+        'memory' => [
+            'driver' => 'local',
+            'root' => '/tmp',
+        ],
+
     ],
 
     /*
