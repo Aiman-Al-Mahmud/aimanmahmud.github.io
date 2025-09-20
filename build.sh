@@ -5,8 +5,11 @@ set -e
 
 echo "Starting Laravel build process..."
 
+# Install Composer
+curl -sS https://getcomposer.org/installer | php
+
 # Install dependencies
-composer install --no-dev --optimize-autoloader --no-interaction
+php composer.phar install --no-dev --optimize-autoloader --no-interaction
 
 # Generate application key if .env exists
 if [ -f ".env" ]; then
