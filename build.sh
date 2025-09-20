@@ -10,6 +10,29 @@ export APP_DEBUG=false
 export LOG_CHANNEL=stderr
 export LOG_LEVEL=error
 
+# Install PHP if not available
+echo "🐘 Checking for PHP..."
+if ! command -v php &> /dev/null; then
+    echo "📥 Installing PHP..."
+    # Install PHP for Ubuntu/Debian systems
+    if command -v apt-get &> /dev/null; then
+        apt-get update && apt-get install -y php8.2 php8.2-cli php8.2-common php8.2-mysql php8.2-zip php8.2-gd php8.2-mbstring php8.2-curl php8.2-xml php8.2-bcmath
+    # Install PHP for Alpine systems
+    elif command -v apk &> /dev/null; then
+        apk add --no-cache php82 php82-cli php82-common php82-mysqlnd php82-zip php82-gd php82-mbstring php82-curl php82-xml php82-bcmath
+    # Install PHP for CentOS/RHEL systems
+    elif command -v yum &> /dev/null; then
+        yum install -y php php-cli php-common php-mysql php-zip php-gd php-mbstring php-curl php-xml php-bcmath
+    else
+        echo "❌ Could not install PHP. Unsupported system."
+        exit 1
+    fi
+    if [ $? -ne 0 ]; then
+        echo "❌ Failed to install PHP"
+        exit 1
+    fi
+fi
+
 # Install Composer if not available
 echo "📦 Checking for Composer..."
 if ! command -v composer &> /dev/null; then
