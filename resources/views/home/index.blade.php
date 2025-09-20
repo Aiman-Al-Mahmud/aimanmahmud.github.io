@@ -1,60 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aiman Al Mahmud - Software Engineer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'orbitron': ['Orbitron', 'sans-serif'],
-                        'inter': ['Inter', 'sans-serif'],
-                    },
-                    animation: {
-                        'fadeIn': 'fadeIn 1s ease-in-out',
-                        'slideInLeft': 'slideInLeft 1s ease-out',
-                        'slideInRight': 'slideInRight 1s ease-out',
-                        'slideInUp': 'slideInUp 1s ease-out',
-                        'bounce-slow': 'bounce 2s infinite',
-                        'pulse-glow': 'pulse-glow 2s infinite',
-                        'float': 'float 3s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' }
-                        },
-                        slideInLeft: {
-                            '0%': { transform: 'translateX(-100px)', opacity: '0' },
-                            '100%': { transform: 'translateX(0)', opacity: '1' }
-                        },
-                        slideInRight: {
-                            '0%': { transform: 'translateX(100px)', opacity: '0' },
-                            '100%': { transform: 'translateX(0)', opacity: '1' }
-                        },
-                        slideInUp: {
-                            '0%': { transform: 'translateY(50px)', opacity: '0' },
-                            '100%': { transform: 'translateY(0)', opacity: '1' }
-                        },
-                        'pulse-glow': {
-                            '0%, 100%': { boxShadow: '0 0 20px rgba(34, 211, 238, 0.4)' },
-                            '50%': { boxShadow: '0 0 40px rgba(34, 211, 238, 0.8)' }
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-20px)' }
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-</head>
-<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-black min-h-screen font-inter">
+@extends('layouts.app')
+
+@section('content')
 
     <!-- Navbar -->
      @include('components.navbar')
@@ -268,5 +214,4 @@
             document.body.classList.add('animate-fadeIn');
         });
     </script>
-</body>
-</html>
+@endsection

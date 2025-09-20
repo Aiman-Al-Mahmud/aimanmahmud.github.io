@@ -1,3 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .font-orbitron {
+        font-family: 'Orbitron', sans-serif;
+    }
+
+    .font-inter {
+        font-family: 'Inter', sans-serif;
+    }
+
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+    @keyframes slideInLeft {
+        0% { transform: translateX(-100px); opacity: 0; }
+        100% { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes slideInRight {
+        0% { transform: translateX(100px); opacity: 0; }
+        100% { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes slideInUp {
+        0% { transform: translateY(50px); opacity: 0; }
+        100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes pulse-glow {
+        0%, 100% { box-shadow: 0 0 20px rgba(34, 211, 238, 0.4); }
+        50% { box-shadow: 0 0 40px rgba(34, 211, 238, 0.8); }
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+    }
+
+    .animate-fadeIn {
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .animate-slideInLeft {
+        animation: slideInLeft 1s ease-out;
+    }
+
+    .animate-slideInRight {
+        animation: slideInRight 1s ease-out;
+    }
+
+    .animate-slideInUp {
+        animation: slideInUp 1s ease-out;
+    }
+
+    .animate-bounce-slow {
+        animation: bounce 2s infinite;
+    }
+
+    .animate-pulse-glow {
+        animation: pulse-glow 2s infinite;
+    }
+
+    .animate-float {
+        animation: float 3s ease-in-out infinite;
+    }
+}
