@@ -58,7 +58,8 @@
             "@php artisan test"
         ],
         "vercel": [
-            "php artisan config:clear",
+            "php artisan --version",
+            "php artisan config:clear -v",
             "php artisan config:cache",
             "php artisan route:clear",
             "php artisan route:cache",
